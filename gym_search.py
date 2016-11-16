@@ -29,7 +29,7 @@ import json
 import time
 import logging
 import argparse
-#import pprint
+# import pprint
 import gym_lighting
 
 from pgoapi import PGoApi
@@ -158,10 +158,10 @@ def main():
 
     # get player profile call
     # ----------------------
-    # response_dict = api.get_player()
+    response_dict = api.get_player()
 
     while True:
-        time.sleep(1)
+        time.sleep(2)
         find_poi(api, position[0], position[1])
 
 
