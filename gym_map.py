@@ -42,8 +42,8 @@ from s2sphere import CellId, LatLng
 
 log = logging.getLogger(__name__)
 
-def get_pos_by_name(location_name):
-    geolocator = GoogleV3()
+def get_pos_by_name(location_name, apikey):
+    geolocator = GoogleV3(api_key=apikey)
     loc = geolocator.geocode(location_name)
     if not loc:
         return None
@@ -98,6 +98,8 @@ def init_config():
                         required=required("password"))
     parser.add_argument("-l", "--location", help="Location",
                         required=required("location"))
+    parser.add_argument("-k", "--google_key", help="Google API Key",
+                        required=required("google_key"))
     parser.add_argument("-d", "--debug", help="Debug Mode",
                         action='store_true')
     parser.add_argument(
@@ -138,7 +140,7 @@ def main():
         logging.getLogger("pgoapi").setLevel(logging.DEBUG)
         logging.getLogger("rpc_api").setLevel(logging.DEBUG)
 
-    position = get_pos_by_name(config.location)
+    position = get_pos_by_name(config.location, config.google_key)
     if not position:
         return
 
