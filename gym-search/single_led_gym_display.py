@@ -30,7 +30,7 @@ import time
 import logging
 import argparse
 # import pprint
-import gym_lighting
+import led
 
 from pgoapi import PGoApi
 from pgoapi import utilities as util
@@ -192,17 +192,17 @@ def find_poi(api, lat, lng):
                                     print "Alchemist Gym owned by Team " + str(fort['owned_by_team'])
                                     if 'is_in_battle' in fort:
                                         print "Alchemist Gym is in battle!"
-                                        gym_lighting.show_team_battle(fort['owned_by_team'])
+                                        led.show_team_battle(fort['owned_by_team'])
                                     else:
-                                        gym_lighting.show_team_color(fort['owned_by_team'])
+                                        led.show_team_color(fort['owned_by_team'])
 
                                 if fort['latitude'] == 42.362172 and fort['longitude'] == -71.090021:
                                     print "Stata Gym owned by Team " + str(fort['owned_by_team'])
                                     if 'is_in_battle' in fort:
                                         print "Stata Gym is in battle!"
-                                        # gym_lighting.show_team_battle(fort['owned_by_team'])
+                                    #     led.show_team_battle(fort['owned_by_team'])
                                     # else:
-                                        # gym_lighting.show_team_color(fort['owned_by_team'])
+                                    #     led.show_team_color(fort['owned_by_team'])
 
 
 if __name__ == '__main__':
