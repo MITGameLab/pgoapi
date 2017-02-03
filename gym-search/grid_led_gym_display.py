@@ -177,6 +177,8 @@ def find_poi(api, lat, lng):
     # step_limit = 1
     api.set_position(lat, lng, 0)
 
+    print("Test")
+
     # get_cellid was buggy -> replaced through get_cell_ids from pokecli
     # timestamp gets computed a different way:
     cell_ids = get_cell_ids(lat, lng)
