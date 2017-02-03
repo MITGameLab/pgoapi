@@ -32,8 +32,8 @@ import argparse
 # import pprint
 import led_grid
 
-from pgoapi import PGoApi
-from pgoapi import utilities as util
+from ../pgoapi-source/pgoapi import PGoApi
+from ../pgoapi-source/pgoapi import utilities as util
 
 from google.protobuf.internal import encoder
 from geopy.geocoders import GoogleV3
