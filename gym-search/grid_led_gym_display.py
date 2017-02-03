@@ -181,7 +181,7 @@ def find_poi(api, lat, lng):
     # timestamp gets computed a different way:
     cell_ids = get_cell_ids(lat, lng)
     timestamps = [0, ] * len(cell_ids)
-    response_dict = api.get_map_objects(latitude=util.f2i(lat), longitude=util.f2i(lng), since_timestamp_ms=timestamps, cell_id=cell_ids)
+    response_dict = api.get_map_objects(latitude=double(lat), longitude=double(lng), since_timestamp_ms=timestamps, cell_id=cell_ids)
     if (response_dict['responses']):
         if 'status' in response_dict['responses']['GET_MAP_OBJECTS']:
             if response_dict['responses']['GET_MAP_OBJECTS']['status'] == 1:
