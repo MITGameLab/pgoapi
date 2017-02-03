@@ -33,12 +33,15 @@ import pprint
 #import webbrowser
 import urllib
 
-from pgoapi import PGoApi
-from pgoapi import utilities as util
-
 from google.protobuf.internal import encoder
 from geopy.geocoders import GoogleV3
 from s2sphere import CellId, LatLng
+
+sys.path.append("../pgoapi-source/")
+
+from pgoapi import PGoApi
+from pgoapi import utilities as util
+
 
 log = logging.getLogger(__name__)
 
