@@ -32,12 +32,16 @@ import argparse
 # import pprint
 import led_grid
 
-from ../pgoapi-source/pgoapi import PGoApi
-from ../pgoapi-source/pgoapi import utilities as util
-
 from google.protobuf.internal import encoder
 from geopy.geocoders import GoogleV3
 from s2sphere import CellId, LatLng
+
+import sys
+
+sys.path.append("../pgoapi-source/")
+
+from pgoapi import PGoApi
+from pgoapi import utilities as util
 
 log = logging.getLogger(__name__)
 
