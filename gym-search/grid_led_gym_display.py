@@ -55,7 +55,6 @@ def get_pos_by_name(location_name, apikey):
     log.info('Your given location: %s', loc.address.encode('utf-8'))
     log.info('lat/long/alt: %s %s %s', loc.latitude,
              loc.longitude, loc.altitude)
-
     return (loc.latitude, loc.longitude, loc.altitude)
 
 
@@ -181,7 +180,7 @@ def find_poi(api, lat, lng):
     # timestamp gets computed a different way:
     cell_ids = get_cell_ids(lat, lng)
     timestamps = [0, ] * len(cell_ids)
-    response_dict = api.get_map_objects(latitude=lat, longitude=lng, since_timestamp_ms=timestamps, cell_id=cell_ids)
+    response_dict = api.get_map_objects(latitude=util.f2i(lat), longitude=util.f2i(lng), since_timestamp_ms=timestamps, cell_id=cell_ids)
     if (response_dict['responses']):
         if 'status' in response_dict['responses']['GET_MAP_OBJECTS']:
             if response_dict['responses']['GET_MAP_OBJECTS']['status'] == 1:
