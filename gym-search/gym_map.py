@@ -37,6 +37,8 @@ from google.protobuf.internal import encoder
 from geopy.geocoders import GoogleV3
 from s2sphere import CellId, LatLng
 
+import sys
+
 sys.path.append("../pgoapi-source/")
 
 from pgoapi import PGoApi
