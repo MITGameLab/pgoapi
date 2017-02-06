@@ -30,12 +30,13 @@ import time
 import logging
 import argparse
 # import pprint
-import led
+import led_single
 
 from google.protobuf.internal import encoder
 from geopy.geocoders import GoogleV3
 from s2sphere import CellId, LatLng
 
+import sys
 sys.path.append("../pgoapi-source/")
 
 from pgoapi import PGoApi
@@ -194,14 +195,14 @@ def find_poi(api, lat, lng):
                                     print "Alchemist Gym owned by Team " + str(fort['owned_by_team'])
                                     if 'is_in_battle' in fort:
                                         print "Alchemist Gym is in battle!"
-                                        led.show_team_battle(fort['owned_by_team'])
+                                        led_single.show_team_battle(fort['owned_by_team'])
                                     else:
-                                        led.show_team_color(fort['owned_by_team'])
+                                        led_single.show_team_color(fort['owned_by_team'])
 
-                                if fort['latitude'] == 42.362172 and fort['longitude'] == -71.090021:
-                                    print "Stata Gym owned by Team " + str(fort['owned_by_team'])
-                                    if 'is_in_battle' in fort:
-                                        print "Stata Gym is in battle!"
+                                #if fort['latitude'] == 42.362172 and fort['longitude'] == -71.090021:
+                                    #print "Stata Gym owned by Team " + str(fort['owned_by_team'])
+                                    #if 'is_in_battle' in fort:
+                                        #print "Stata Gym is in battle!"
                                     #     led.show_team_battle(fort['owned_by_team'])
                                     # else:
                                     #     led.show_team_color(fort['owned_by_team'])
