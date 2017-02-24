@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd pgoapi
+python setup.py build
+pip install -U  -r requirements.txt
+cd ..
+ls
