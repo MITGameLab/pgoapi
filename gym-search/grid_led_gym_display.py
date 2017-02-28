@@ -38,7 +38,7 @@ from s2sphere import CellId, LatLng
 
 import sys
 
-sys.path.append("../pgoapi-source/")
+sys.path.append("../pgoapi/")
 
 from pgoapi import PGoApi
 from pgoapi import utilities as util
