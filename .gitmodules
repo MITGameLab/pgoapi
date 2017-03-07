@@ -3,4 +3,5 @@
 	url = https://github.com/pokelibs/pgoapi-libs.git
 [submodule "pgoapi"]
 	path = pgoapi
-	url = https://github.com/pogodevorg/pgoapi
+	url = https://github.com/pogodevorg/pgoapi.git
+	branch = develop
