@@ -17,8 +17,8 @@ def index():
         results.append(forts[str(loc)])
     elif len(str(loc))==0:
         results = forts.values()
-    return jsonify(results)
+    return jsonify(data = results)
 
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run(port=8000, debug = True)
     

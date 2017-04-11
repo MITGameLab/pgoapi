@@ -1,6 +1,5 @@
 import urllib2
 import json
-import argon2
 import requests
 import led_grid
 import time
@@ -12,7 +11,8 @@ def get_json(loc):
 
 def main():
     while True:
-        forts = get_json("")
+        forts = get_json("")['data']
+        print forts
         for fort in forts:
             if 'owned_by_team' in fort:
                 
