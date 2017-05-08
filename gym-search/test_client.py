@@ -1,7 +1,10 @@
 import urllib2
 import json
+<<<<<<< HEAD
 import argparse
 import os
+=======
+>>>>>>> e396edb9a21113c477cbdea9cb97280fb4f1d922
 import requests
 import led_grid
 import time
@@ -41,7 +44,7 @@ def main():
 
     while True:
         print("looping")
-        forts = get_json(loc)
+        forts = get_json(loc)['data']
         print(forts)
         for fort in forts:
             if 'owned_by_team' in fort:
