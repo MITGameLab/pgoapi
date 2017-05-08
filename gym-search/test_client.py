@@ -20,10 +20,6 @@ def get_pos_by_name(location_name, apikey):
     loc = geolocator.geocode(location_name)
     if not loc:
         return None
-
-    print('Your given location: %s', loc.address.encode('utf-8'))
-    print('lat/long/alt: %s %s %s', loc.latitude,
-             loc.longitude, loc.altitude)
     return (loc.latitude, loc.longitude, loc.altitude)
 
 def main():
@@ -37,12 +33,9 @@ def main():
             load.update(json.load(data))
 
     loc = get_pos_by_name(load["location"], load["google_key"])
-    print loc
 
     while True:
-        print("looping")
         forts = get_json(loc)['data']
-        print(forts)
         for fort in forts:
             if 'owned_by_team' in fort:
                 

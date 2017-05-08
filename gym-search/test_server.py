@@ -14,7 +14,6 @@ forts = {"Alchemist" : {"id":1, "owned_by_team": 1,
 def index():
     lat = request.args.get("lat","")
     lng = request.args.get("lng","")
-    print (lat,lng)
     loc= (lat,lng)
     results = []
     for fort in forts.values():
@@ -23,8 +22,6 @@ def index():
     return jsonify(data = results)
 
 def almost_equal(a,b,precision = 3):
-    print abs(a-float(b))
-    print pow(10, -precision)
     return (abs(a-float(b)) < (pow(10, -precision)))
 
 if __name__ == "__main__":
